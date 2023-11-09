@@ -1,7 +1,5 @@
 (in-package :stack)
 
-
-
 ;;===================================================
 ;;-- General
 ;;===================================================
@@ -56,7 +54,7 @@
   "A utility to create a function that gets stackechange links based on the hashkey"
   `(defun ,name
        (&key (page-size "2") (tag-list '("common-lisp")) (sort "creation"))
-     (let ((cache (gethash ,site *all-cache*)))
+     (let ((cache (gethash ,site *search-cache*)))
        (when cache
 	 (return-from ,name cache))
        (let* ((api-path (make-stack-url :page-size page-size
@@ -71,3 +69,9 @@
 	 (format t "Links saved to memory cache~%")
 	 (format t "Links saved to db cache~%")
 	 links))))
+
+;;===================================================
+;;-- Make Functions
+;;===================================================
+
+(make-stackexchange-defun stackoverflow *link-one-key*)
