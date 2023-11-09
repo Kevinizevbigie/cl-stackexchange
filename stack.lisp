@@ -58,16 +58,15 @@
        (when cache
 	 (return-from ,name cache))
        (let* ((api-path (make-stack-url :page-size page-size
-				   :tag-list tag-list
-				   :sort sort
-				   :site ,site))
+					:tag-list tag-list
+					:sort sort
+					:site ,site))
 	      (api "https://api.stackexchange.com/")
 	      (full-url (concatenate 'string api api-path))
 	      (data (eighth (jonathan:parse (dexador:get full-url))))
      	      (links (mapcar #'get-title-and-link data)))
 	 (save-to-link-cache ,site links)
 	 (format t "Links saved to memory cache~%")
-	 (format t "Links saved to db cache~%")
 	 links))))
 
 ;;===================================================
