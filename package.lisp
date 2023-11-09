@@ -1,5 +1,7 @@
 (in-package :cl-user)
 (defpackage :stack
  (:use :cl)
- ;;(:export #:)
- )
+ (:export #:stackoverflow
+	  #:*search-cache*
+	  #:*stack-key*
+	  #:clear-cache))
