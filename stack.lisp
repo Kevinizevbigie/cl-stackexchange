@@ -6,6 +6,7 @@
 ;;-- General
 ;;===================================================
 
+(defvar *link-one-key* "stackoverflow" "The name of the stackoverflow website to be passed into the stackexchange query search")
 
 
 ;;===================================================
