@@ -38,6 +38,12 @@ tag-list = currently only accepts one value in list
   (LINK
    . "https://stackoverflow.com/questions/77421618/how-to-move-the-cursor-on-the-editing-line-with-cl-readline")))
 
+## Using the *stack-key*
+
+To maximise the amount of searches per day, you need to use your unique stackexchange API key.
+
+Add it: (setf stack:*stack-key* "Your Key")
+
 ## To Do
 
    - Allow for multiple stack tags in tag list
